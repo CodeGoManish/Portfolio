@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+    <title>Neon | Manish Gupta</title>
+    
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: #0a0a0f;
+            color: #fff;
+            min-height: 100vh;
+        }
+
+        /* ===== SIMPLE NEON THEME ===== */
+        .neon-pink {
+            color: #ff00de;
+            text-shadow: 0 0 5px #ff00de, 0 0 10px #ff00de;
+        }
+
+        .neon-border {
+            border: 2px solid #ff00de;
+            box-shadow: 0 0 10px #ff00de, 0 0 20px rgba(255, 0, 222, 0.3);
+        }
+
+        /* ===== CONTAINER ===== */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* ===== HEADER ===== */
+        header {
+            text-align: center;
+            padding: 3rem 1rem 2rem;
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            animation: flicker 3s infinite;
+        }
+
+        @keyframes flicker {
+            0%, 100% { text-shadow: 0 0 5px #ff00de, 0 0 10px #ff00de, 0 0 20px #ff00de; }
+            25% { text-shadow: 0 0 2px #ff00de, 0 0 5px #ff00de, 0 0 10px #ff00de; }
+            50% { text-shadow: 0 0 10px #ff00de, 0 0 20px #ff00de, 0 0 40px #ff00de; }
+            75% { text-shadow: 0 0 2px #ff00de, 0 0 5px #ff00de, 0 0 10px #ff00de; }
+        }
+
+        .tagline {
+            font-size: 1.2rem;
+            color: #ccc;
+            letter-spacing: 2px;
+            border-bottom: 1px solid rgba(255, 0, 222, 0.3);
+            display: inline-block;
+            padding-bottom: 0.5rem;
+        }
+
+        /* ===== MAIN CARD ===== */
+        .neon-card {
+            background: rgba(10, 10, 15, 0.8);
+            border: 1px solid rgba(255, 0, 222, 0.3);
+            border-radius: 30px;
+            padding: 2.5rem;
+            margin: 2rem 0;
+            backdrop-filter: blur(5px);
+            transition: 0.3s;
+        }
+
+        .neon-card:hover {
+            border-color: #ff00de;
+            box-shadow: 0 0 30px rgba(255, 0, 222, 0.2);
+        }
+
+        /* ===== ABOUT SECTION ===== */
+        .about-section {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .about-text {
+            color: #e0e0e0;
+            line-height: 1.8;
+            font-size: 1.1rem;
+        }
+
+        .highlight {
+            color: #ff00de;
+            font-weight: 600;
+        }
+
+        /* ===== SKILLS ===== */
+        .skills-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+            justify-content: center;
+            margin: 2rem 0;
+        }
+
+        .skill-item {
+            background: rgba(255, 0, 222, 0.1);
+            border: 1px solid rgba(255, 0, 222, 0.3);
+            border-radius: 50px;
+            padding: 0.6rem 1.5rem;
+            font-size: 0.95rem;
+            color: #fff;
+            transition: 0.3s;
+        }
+
+        .skill-item:hover {
+            background: #ff00de;
+            transform: scale(1.05);
+            box-shadow: 0 0 20px #ff00de;
+        }
+
+        /* ===== PROJECT CARDS ===== */
+        .projects-showcase {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .project-mini {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 0, 222, 0.2);
+            border-radius: 20px;
+            padding: 1.5rem;
+            text-align: center;
+            transition: 0.3s;
+        }
+
+        .project-mini:hover {
+            border-color: #ff00de;
+            transform: translateY(-5px);
+        }
+
+        .project-mini i {
+            font-size: 2.5rem;
+            color: #ff00de;
+            margin-bottom: 1rem;
+        }
+
+        .project-mini h3 {
+            font-size: 1.2rem;
+            margin-bottom: 0.3rem;
+        }
+
+        .project-mini p {
+            color: #aaa;
+            font-size: 0.9rem;
+        }
+
+        /* ===== CONTACT INFO ===== */
+        .contact-row {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .contact-chip {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            background: rgba(255, 0, 222, 0.1);
+            border: 1px solid rgba(255, 0, 222, 0.3);
+            border-radius: 50px;
+            padding: 0.8rem 1.8rem;
+            transition: 0.3s;
+        }
+
+        .contact-chip i {
+            color: #ff00de;
+            font-size: 1.2rem;
+        }
+
+        .contact-chip span, .contact-chip a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1rem;
+        }
+
+        .contact-chip:hover {
+            background: #ff00de;
+            transform: translateY(-3px);
+        }
+
+        .contact-chip:hover i,
+        .contact-chip:hover span,
+        .contact-chip:hover a {
+            color: #0a0a0f;
+        }
+
+        /* ===== SOCIAL ICONS ===== */
+        .social-circle {
+            display: flex;
+            justify-content: center;
+            gap: 1.2rem;
+            margin: 2rem 0;
+        }
+
+        .social-circle a {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: rgba(255, 0, 222, 0.1);
+            border: 1px solid rgba(255, 0, 222, 0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-size: 1.3rem;
+            transition: 0.3s;
+            text-decoration: none;
+        }
+
+        .social-circle a:hover {
+            background: #ff00de;
+            transform: rotate(360deg) scale(1.1);
+        }
+
+        .social-circle a:hover i {
+            color: #0a0a0f;
+        }
+
+        /* ===== NAVIGATION BUTTONS ===== */
+        .nav-bar {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin: 2rem 0 1rem;
+        }
+
+        .nav-pill {
+            padding: 0.6rem 1.5rem;
+            border: 1px solid rgba(255, 0, 222, 0.3);
+            border-radius: 50px;
+            color: #fff;
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: 0.3s;
+            background: rgba(0,0,0,0.3);
+        }
+
+        .nav-pill:hover {
+            background: #ff00de;
+            border-color: #ff00de;
+            transform: translateY(-2px);
+        }
+
+        .nav-pill i {
+            margin-right: 5px;
+        }
+
+        /* ===== BACK LINK ===== */
+        .back-home {
+            text-align: center;
+            margin: 2rem 0;
+        }
+
+        .back-home a {
+            color: #ff00de;
+            text-decoration: none;
+            font-size: 1rem;
+            opacity: 0.8;
+            transition: 0.3s;
+        }
+
+        .back-home a:hover {
+            opacity: 1;
+            text-shadow: 0 0 10px #ff00de;
+        }
+
+        .back-home i {
+            margin-right: 5px;
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+            
+            .projects-showcase {
+                grid-template-columns: 1fr;
+            }
+            
+            .contact-row {
+                flex-direction: column;
+                align-items: center;
+                gap: 1rem;
+            }
+            
+            .contact-chip {
+                width: 100%;
+                max-width: 300px;
+                justify-content: center;
+            }
+            
+            .neon-card {
+                padding: 1.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .tagline {
+                font-size: 1rem;
+            }
+            
+            .skill-item {
+                padding: 0.4rem 1rem;
+                font-size: 0.85rem;
+            }
+            
+            .nav-bar {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .nav-pill {
+                width: 100%;
+                max-width: 250px;
+                text-align: center;
+            }
+        }
+
+        /* ===== SIMPLE ANIMATIONS ===== */
+        .fade-up {
+            animation: fadeUp 0.8s ease;
+        }
+
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .glow {
+            animation: glowPulse 2s infinite;
+        }
+
+        @keyframes glowPulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.8; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container fade-up">
+        <!-- Header -->
+        <header>
+            <h1 class="neon-pink">Manish Gupta</h1>
+            <div class="tagline">Developer • Designer • Creator</div>
+        </header>
+
+        <!-- Main Neon Card -->
+        <div class="neon-card">
+            <!-- About Section -->
+            <div class="about-section">
+                <p class="about-text">
+                    <span class="highlight">Computer Science student</span> at Delhi University, 
+                    passionate about building digital experiences through code and design.
+                </p>
+                
+                <!-- Skills Tags -->
+                <div class="skills-grid">
+                    <span class="skill-item">HTML5</span>
+                    <span class="skill-item">CSS3</span>
+                    <span class="skill-item">JavaScript</span>
+                    <span class="skill-item">Java</span>
+                    <span class="skill-item">Python</span>
+                    <span class="skill-item">Flutter</span>
+                    <span class="skill-item">Video Editing</span>
+                    <span class="skill-item">Canva</span>
+                </div>
+            </div>
+
+            <!-- Projects Mini Showcase -->
+            <div class="projects-showcase">
+                <div class="project-mini">
+                    <i class="fas fa-globe"></i>
+                    <h3>Portfolio</h3>
+                    <p>Neon themed design</p>
+                </div>
+                <div class="project-mini">
+                    <i class="fas fa-robot"></i>
+                    <h3>KI Assistant</h3>
+                    <p>Voice controlled AI</p>
+                </div>
+                <div class="project-mini">
+                    <i class="fas fa-file-pdf"></i>
+                    <h3>Resume</h3>
+                    <p>PDF viewer</p>
+                </div>
+            </div>
+
+            <!-- Contact Chips -->
+            <div class="contact-row">
+                <div class="contact-chip">
+                    <i class="fas fa-envelope"></i>
+                    <a href="mailto:manish05453@gmail.com">manish05453</a>
+                </div>
+                <div class="contact-chip">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>Delhi, India</span>
+                </div>
+            </div>
+
+            <!-- Social Circle -->
+            <div class="social-circle">
+                <a href="https://github.com/CodeGoManish" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/manish-gupta-a0a671208/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="https://www.facebook.com/profile.php?id=100028451280455" target="_blank"><i class="fab fa-facebook"></i></a>
+                <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+            </div>
+        </div>
+
+        <!-- Navigation Pills -->
+        <div class="nav-bar">
+            <a href="index.html" class="nav-pill"><i class="fas fa-home"></i> Home</a>
+            <a href="about.html" class="nav-pill"><i class="fas fa-user"></i> About</a>
+            <a href="skills.html" class="nav-pill"><i class="fas fa-code"></i> Skills</a>
+            <a href="projects.html" class="nav-pill"><i class="fas fa-project-diagram"></i> Projects</a>
+            <a href="contact.html" class="nav-pill"><i class="fas fa-envelope"></i> Contact</a>
+        </div>
+
+        <!-- Back Link -->
+        <div class="back-home">
+            <a href="javascript:history.back()"><i class="fas fa-arrow-left"></i> Go Back</a>
+        </div>
+    </div>
+
+    <script>
+        // Smooth scroll for anchor links (if any)
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+
+        // Console greeting
+        console.log('✨ Neon Mode Activated');
+    </script>
+</body>
+</html>

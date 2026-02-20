@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+    <title>KI - Your Virtual Assistant</title>
+    <link rel="shortcut icon" href="voice.gif" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
+    
+    <style>
+        /* Import Google Fonts */
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;800&family=Poppins:wght@300;400;500;600;700&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #6c5ce7;
+            --secondary: #a463f5;
+            --accent: #00d2d3;
+            --dark: #0a0a0f;
+            --darker: #050508;
+            --light: #ffffff;
+            --gray: #b0b0c0;
+            --gradient-1: linear-gradient(135deg, #6c5ce7, #a463f5);
+            --gradient-2: linear-gradient(45deg, #00d2d3, #6c5ce7);
+            --gradient-3: linear-gradient(135deg, #ff6b6b, #feca57);
+            --shadow: 0 20px 40px rgba(108, 92, 231, 0.3);
+            --glow: 0 0 20px rgba(108, 92, 231, 0.5);
+        }
+
+        body {
+            min-height: 100vh;
+            background: var(--darker);
+            font-family: 'Poppins', sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        /* Animated Background */
+        .bg-animation {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            overflow: hidden;
+        }
+
+        .bg-circle {
+            position: absolute;
+            border-radius: 50%;
+            background: var(--gradient-1);
+            filter: blur(60px);
+            opacity: 0.15;
+            animation: float 20s infinite;
+        }
+
+        .bg-circle:nth-child(1) {
+            width: 400px;
+            height: 400px;
+            top: -100px;
+            left: -100px;
+            animation-delay: 0s;
+        }
+
+        .bg-circle:nth-child(2) {
+            width: 500px;
+            height: 500px;
+            bottom: -150px;
+            right: -150px;
+            background: var(--gradient-2);
+            animation-delay: -5s;
+        }
+
+        .bg-circle:nth-child(3) {
+            width: 300px;
+            height: 300px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: var(--gradient-3);
+            animation-delay: -10s;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            25% { transform: translate(50px, 50px) scale(1.1); }
+            50% { transform: translate(0, 100px) scale(0.9); }
+            75% { transform: translate(-50px, 50px) scale(1.05); }
+        }
+
+        /* Main Container */
+        .container {
+            position: relative;
+            z-index: 1;
+            width: 100%;
+            max-width: 800px;
+            background: rgba(10, 10, 20, 0.7);
+            backdrop-filter: blur(20px);
+            border-radius: 50px;
+            padding: 40px 30px;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
+            border: 1px solid rgba(108, 92, 231, 0.3);
+            animation: containerAppear 1s ease-out;
+        }
+
+        @keyframes containerAppear {
+            from {
+                opacity: 0;
+                transform: scale(0.9) translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1) translateY(0);
+            }
+        }
+
+        /* Logo */
+        .logo-wrapper {
+            text-align: center;
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        #logo {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid transparent;
+            background: var(--gradient-1);
+            padding: 3px;
+            animation: logoPulse 3s infinite, logoRotate 10s linear infinite;
+            box-shadow: var(--glow);
+        }
+
+        @keyframes logoPulse {
+            0%, 100% {
+                transform: scale(1);
+                box-shadow: 0 0 20px rgba(108, 92, 231, 0.5);
+            }
+            50% {
+                transform: scale(1.05);
+                box-shadow: 0 0 40px rgba(108, 92, 231, 0.8);
+            }
+        }
+
+        @keyframes logoRotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        /* Title */
+        h1 {
+            text-align: center;
+            font-size: 2.8rem;
+            margin: 20px 0;
+            font-family: 'Orbitron', sans-serif;
+            background: linear-gradient(135deg, #fff, #a0a0ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0 0 30px rgba(108, 92, 231, 0.5);
+            animation: titleGlow 3s infinite;
+        }
+
+        @keyframes titleGlow {
+            0%, 100% { text-shadow: 0 0 20px rgba(108, 92, 231, 0.5); }
+            50% { text-shadow: 0 0 40px rgba(108, 92, 231, 0.8); }
+        }
+
+        #name {
+            background: var(--gradient-1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-size: 3.5rem;
+            font-weight: 800;
+            display: inline-block;
+            animation: nameBounce 2s infinite;
+        }
+
+        @keyframes nameBounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-5px); }
+        }
+
+        #va {
+            background: var(--gradient-2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-size: 2.5rem;
+            font-weight: 700;
+        }
+
+        /* Voice Animation */
+        .voice-container {
+            text-align: center;
+            margin: 30px 0;
+            min-height: 100px;
+        }
+
+        #voice {
+            width: 100px;
+            height: 100px;
+            display: none;
+            animation: voiceWave 1.5s ease-in-out infinite;
+        }
+
+        @keyframes voiceWave {
+            0%, 100% {
+                transform: scale(1);
+                filter: drop-shadow(0 0 10px var(--primary));
+            }
+            50% {
+                transform: scale(1.2);
+                filter: drop-shadow(0 0 30px var(--primary));
+            }
+        }
+
+        /* Voice Wave Animation when active */
+        .voice-active {
+            display: flex !important;
+            justify-content: center;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .voice-active .wave {
+            width: 5px;
+            height: 30px;
+            background: var(--gradient-1);
+            border-radius: 5px;
+            animation: wave 1s ease-in-out infinite;
+        }
+
+        .wave:nth-child(2) { animation-delay: 0.2s; }
+        .wave:nth-child(3) { animation-delay: 0.4s; }
+        .wave:nth-child(4) { animation-delay: 0.6s; }
+        .wave:nth-child(5) { animation-delay: 0.8s; }
+
+        @keyframes wave {
+            0%, 100% { height: 20px; }
+            50% { height: 50px; }
+        }
+
+        /* Button */
+        .button-wrapper {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        #btn {
+            background: var(--gradient-1);
+            border: none;
+            padding: 20px 40px;
+            border-radius: 60px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            cursor: pointer;
+            transition: 0.3s;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(108, 92, 231, 0.4);
+            border: 2px solid rgba(255, 255, 255, 0.2);
+        }
+
+        #btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transition: 0.5s;
+        }
+
+        #btn:hover::before {
+            left: 100%;
+        }
+
+        #btn:hover {
+            transform: translateY(-5px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(108, 92, 231, 0.6);
+        }
+
+        #btn:active {
+            transform: translateY(0) scale(0.98);
+        }
+
+        #btn img {
+            width: 30px;
+            height: 30px;
+            filter: brightness(0) invert(1);
+            animation: micPulse 2s infinite;
+        }
+
+        @keyframes micPulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+
+        #content {
+            color: white;
+            font-size: 1.2rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+
+        /* Status Indicator */
+        .status {
+            text-align: center;
+            margin-top: 20px;
+            color: var(--gray);
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .status-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: #4caf50;
+            animation: statusPulse 2s infinite;
+        }
+
+        @keyframes statusPulse {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.5; transform: scale(0.8); }
+        }
+
+        /* Commands List */
+        .commands {
+            margin-top: 30px;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            border: 1px solid rgba(108, 92, 231, 0.2);
+        }
+
+        .commands h3 {
+            color: white;
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+            text-align: center;
+        }
+
+        .commands-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 10px;
+        }
+
+        .command-item {
+            background: rgba(108, 92, 231, 0.1);
+            padding: 10px;
+            border-radius: 10px;
+            color: var(--gray);
+            font-size: 0.9rem;
+            text-align: center;
+            border: 1px solid rgba(108, 92, 231, 0.2);
+            transition: 0.3s;
+        }
+
+        .command-item:hover {
+            background: rgba(108, 92, 231, 0.2);
+            transform: translateY(-2px);
+            color: white;
+        }
+
+        .command-item i {
+            color: var(--primary);
+            margin-right: 5px;
+        }
+
+        /* Back Button */
+        .back-btn {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            z-index: 100;
+            background: rgba(108, 92, 231, 0.2);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(108, 92, 231, 0.3);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: 0.3s;
+            text-decoration: none;
+        }
+
+        .back-btn:hover {
+            background: var(--gradient-1);
+            transform: translateX(-5px);
+            box-shadow: var(--glow);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .container {
+                padding: 30px 20px;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            #name {
+                font-size: 2.5rem;
+            }
+
+            #va {
+                font-size: 1.8rem;
+            }
+
+            #btn {
+                padding: 15px 30px;
+            }
+
+            #btn img {
+                width: 25px;
+                height: 25px;
+            }
+
+            #content {
+                font-size: 1rem;
+            }
+
+            .commands-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 20px 15px;
+            }
+
+            h1 {
+                font-size: 1.5rem;
+            }
+
+            #name {
+                font-size: 2rem;
+            }
+
+            #va {
+                font-size: 1.5rem;
+            }
+
+            #logo {
+                width: 100px;
+                height: 100px;
+            }
+
+            .commands-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Loading Animation */
+        .loading {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 3px solid rgba(255,255,255,0.3);
+            border-radius: 50%;
+            border-top-color: white;
+            animation: spin 1s ease-in-out infinite;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <!-- Back to Portfolio Button -->
+    <a href="index.html" class="back-btn">
+        <i class="fas fa-arrow-left"></i>
+    </a>
+
+    <!-- Animated Background -->
+    <div class="bg-animation">
+        <div class="bg-circle"></div>
+        <div class="bg-circle"></div>
+        <div class="bg-circle"></div>
+    </div>
+
+    <!-- Main Container -->
+    <main class="container">
+        <!-- Logo -->
+        <div class="logo-wrapper">
+            <img src="voice.gif" alt="KI Logo" id="logo">
+        </div>
+
+        <!-- Title -->
+        <h1>
+            I'm <span id="name">KI</span>, Your 
+            <span id="va">Virtual Assistant</span>
+        </h1>
+
+        <!-- Voice Animation Container -->
+        <div class="voice-container" id="voiceContainer">
+            <img src="" alt="Voice Animation" id="voice">
+            <div class="voice-active" id="voiceWave" style="display: none;">
+                <div class="wave"></div>
+                <div class="wave"></div>
+                <div class="wave"></div>
+                <div class="wave"></div>
+                <div class="wave"></div>
+            </div>
+        </div>
+
+        <!-- Status Indicator -->
+        <div class="status">
+            <span class="status-dot"></span>
+            <span id="statusText">Listening for commands...</span>
+        </div>
+
+        <!-- Main Button -->
+        <div class="button-wrapper">
+            <button id="btn">
+                <img src="mic.svg" alt="Microphone">
+                <span id="content">Click here to talk to me</span>
+            </button>
+        </div>
+
+        <!-- Available Commands -->
+        <div class="commands">
+            <h3><i class="fas fa-microphone"></i> Try saying:</h3>
+            <div class="commands-grid">
+                <div class="command-item"><i class="fas fa-hand-sparkles"></i> Hello / Hey</div>
+                <div class="command-item"><i class="fas fa-smile"></i> How are you?</div>
+                <div class="command-item"><i class="fas fa-question"></i> Who are you?</div>
+                <div class="command-item"><i class="fab fa-youtube"></i> Open YouTube</div>
+                <div class="command-item"><i class="fab fa-google"></i> Open Google</div>
+                <div class="command-item"><i class="fab fa-facebook"></i> Open Facebook</div>
+                <div class="command-item"><i class="fab fa-instagram"></i> Open Instagram</div>
+                <div class="command-item"><i class="fas fa-clock"></i> What's the time?</div>
+                <div class="command-item"><i class="fas fa-calendar"></i> What's the date?</div>
+                <div class="command-item"><i class="fas fa-calculator"></i> Open calculator</div>
+                <div class="command-item"><i class="fab fa-whatsapp"></i> Open WhatsApp</div>
+                <div class="command-item"><i class="fas fa-search"></i> Search anything</div>
+            </div>
+        </div>
+    </main>
+
+    <script src="script3.js"></script>
+    <script>
+        // Enhanced UI interactions
+        document.addEventListener('DOMContentLoaded', function() {
+            const btn = document.getElementById('btn');
+            const voice = document.getElementById('voice');
+            const voiceWave = document.getElementById('voiceWave');
+            const statusText = document.getElementById('statusText');
+            const content = document.getElementById('content');
+
+            // Override the original button click to add UI feedback
+            const originalClick = btn.onclick;
+            btn.onclick = function(e) {
+                // Show voice animation
+                voice.style.display = 'none';
+                voiceWave.style.display = 'flex';
+                statusText.textContent = 'Listening... Speak now';
+                content.textContent = 'Listening...';
+                
+                // Add listening animation
+                btn.style.background = 'linear-gradient(135deg, #ff6b6b, #feca57)';
+                
+                // Call original function
+                if (originalClick) {
+                    originalClick.call(this, e);
+                }
+            };
+
+            // Listen for recognition result
+            const originalRecognition = window.recognition;
+            if (window.recognition) {
+                window.recognition.onend = function() {
+                    // Reset UI when recognition ends
+                    setTimeout(() => {
+                        voice.style.display = 'block';
+                        voiceWave.style.display = 'none';
+                        statusText.textContent = 'Listening for commands...';
+                        content.textContent = 'Click here to talk to me';
+                        btn.style.background = 'linear-gradient(135deg, #6c5ce7, #a463f5)';
+                    }, 1000);
+                };
+            }
+
+            // Add hover effect for command items
+            document.querySelectorAll('.command-item').forEach(item => {
+                item.addEventListener('click', function() {
+                    const command = this.textContent.trim().toLowerCase();
+                    if (window.takeCommand) {
+                        window.takeCommand(command);
+                    }
+                });
+            });
+        });
+
+        // Add loading state
+        function showLoading() {
+            const btn = document.getElementById('btn');
+            const originalContent = btn.innerHTML;
+            btn.innerHTML = '<span class="loading"></span> Processing...';
+            btn.disabled = true;
+            
+            setTimeout(() => {
+                btn.innerHTML = originalContent;
+                btn.disabled = false;
+            }, 2000);
+        }
+    </script>
+</body>
+</html>
