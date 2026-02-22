@@ -1,0 +1,1085 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+    
+    <!-- ===== ADVANCED SEO & META TAGS ===== -->
+    <title>Skills | Manish Gupta - Java Developer & Multimedia Creator</title>
+    <meta name="description" content="Technical skills of Manish Gupta - Java Developer, Full Stack Developer, Android Developer, Video Editor, Script Writer with 100+ skills.">
+    <meta name="keywords" content="Java Skills, Spring Boot, Android Development, Video Editing, Script Writing, Web Development, Manish Gupta Skills">
+    <meta name="author" content="Manish Gupta">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph / Social Media Meta Tags -->
+    <meta property="og:title" content="Skills - Manish Gupta | Java Developer">
+    <meta property="og:description" content="100+ Technical Skills including Java, Spring Boot, Android, Web Development, Video Editing & Script Writing">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://codegomanish.github.io/skills.html">
+    <meta property="og:image" content="https://via.placeholder.com/1200x630/6c5ce7/ffffff?text=Manish+Gupta+Skills">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Skills - Manish Gupta | Java Developer">
+    <meta name="twitter:description" content="100+ Technical Skills including Java, Spring Boot, Android, Web Development, Video Editing & Script Writing">
+    
+    <!-- ===== PROFESSIONAL FAVICONS ===== -->
+    <!-- Standard Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='45' fill='%236c5ce7'/%3E%3Ctext x='50' y='70' font-size='50' text-anchor='middle' fill='%23ffffff' font-family='Arial' font-weight='bold'%3EMG%3C/text%3E%3C/svg%3E">
+    <link rel="icon" type="image/png" sizes="16x16" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='45' fill='%236c5ce7'/%3E%3Ctext x='50' y='70' font-size='50' text-anchor='middle' fill='%23ffffff' font-family='Arial' font-weight='bold'%3EMG%3C/text%3E%3C/svg%3E">
+    
+    <!-- Apple Touch Icon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='45' fill='%236c5ce7'/%3E%3Ctext x='50' y='70' font-size='50' text-anchor='middle' fill='%23ffffff' font-family='Arial' font-weight='bold'%3EMG%3C/text%3E%3C/svg%3E">
+    
+    <!-- Android Chrome Icon -->
+    <link rel="manifest" href="data:application/manifest+json,%7B%22name%22%3A%22Skills%20-%20Manish%20Gupta%22%2C%22short_name%22%3A%22MG%20Skills%22%2C%22icons%22%3A%5B%7B%22src%22%3A%22data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='45' fill='%236c5ce7'/%3E%3Ctext x='50' y='70' font-size='50' text-anchor='middle' fill='%23ffffff' font-family='Arial' font-weight='bold'%3EMG%3C/text%3E%3C/svg%3E%22%2C%22sizes%22%3A%22192x192%22%2C%22type%22%3A%22image/svg+xml%22%7D%5D%2C%22theme_color%22%3A%22%236c5ce7%22%2C%22background_color%22%3A%22%23050508%22%2C%22display%22%3A%22standalone%22%7D">
+    
+    <!-- MS Application Tile -->
+    <meta name="msapplication-TileColor" content="#6c5ce7">
+    <meta name="msapplication-TileImage" content="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='45' fill='%236c5ce7'/%3E%3Ctext x='50' y='70' font-size='50' text-anchor='middle' fill='%23ffffff' font-family='Arial' font-weight='bold'%3EMG%3C/text%3E%3C/svg%3E">
+    
+    <!-- Theme Color -->
+    <meta name="theme-color" content="#6c5ce7">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        :root {
+            --primary: #6c5ce7;
+            --secondary: #a463f5;
+            --accent: #00d2d3;
+            --dark: #0a0a0f;
+            --darker: #050508;
+            --light: #ffffff;
+            --gray: #b0b0c0;
+            --java: #f89820;
+            --spring: #6db33f;
+            --android: #3ddc84;
+            --gradient: linear-gradient(135deg, var(--primary), var(--secondary));
+        }
+
+        body {
+            background: var(--darker);
+            color: var(--light);
+            min-height: 100vh;
+        }
+
+        /* ===== ADVANCED FEATURES ===== */
+
+        /* Scroll Progress Bar */
+        .scroll-progress {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 0%;
+            height: 4px;
+            background: var(--gradient);
+            z-index: 1001;
+            transition: width 0.1s;
+            box-shadow: 0 0 20px var(--primary);
+        }
+
+        /* Live Clock & Date */
+        .live-clock {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            background: rgba(10,10,15,0.8);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(108,92,231,0.3);
+            border-radius: 50px;
+            padding: 0.8rem 1.5rem;
+            color: var(--light);
+            font-size: 0.9rem;
+            z-index: 99;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+
+        .live-clock i {
+            color: var(--primary);
+            font-size: 1rem;
+        }
+
+        .live-clock .time {
+            font-weight: 600;
+            color: var(--accent);
+        }
+
+        .live-clock .date {
+            color: var(--gray);
+            border-left: 1px solid rgba(108,92,231,0.3);
+            padding-left: 10px;
+        }
+
+        /* View Counter */
+        .view-counter {
+            position: fixed;
+            top: 100px;
+            right: 20px;
+            background: rgba(10,10,15,0.8);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(108,92,231,0.3);
+            border-radius: 30px;
+            padding: 0.5rem 1.2rem;
+            z-index: 99;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.9rem;
+        }
+
+        .view-counter i {
+            color: var(--primary);
+        }
+
+        .counter-number {
+            color: var(--accent);
+            font-weight: 600;
+        }
+
+        /* Quick Contact Floating Button */
+        .quick-contact {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 99;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .contact-float-btn {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: var(--gradient);
+            border: 2px solid var(--light);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: 0.3s;
+            box-shadow: 0 10px 20px rgba(108,92,231,0.4);
+            position: relative;
+            text-decoration: none;
+        }
+
+        .contact-float-btn:hover {
+            transform: scale(1.1) translateY(-5px);
+        }
+
+        .contact-float-btn .tooltip {
+            position: absolute;
+            right: 70px;
+            background: var(--dark);
+            padding: 0.5rem 1rem;
+            border-radius: 30px;
+            font-size: 0.9rem;
+            white-space: nowrap;
+            border: 1px solid var(--primary);
+            opacity: 0;
+            visibility: hidden;
+            transition: 0.3s;
+            pointer-events: none;
+        }
+
+        .contact-float-btn:hover .tooltip {
+            opacity: 1;
+            visibility: visible;
+            right: 80px;
+        }
+
+        /* Floating Social Icons (Desktop) */
+        .floating-social {
+            position: fixed;
+            left: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 99;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .floating-social a {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            background: rgba(10,10,15,0.8);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(108,92,231,0.3);
+            color: var(--light);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            transition: 0.3s;
+            text-decoration: none;
+        }
+
+        .floating-social a:hover {
+            background: var(--primary);
+            transform: translateX(5px) scale(1.1);
+        }
+
+        /* Responsive for new features */
+        @media (max-width: 768px) {
+            .floating-social {
+                display: none;
+            }
+            
+            .view-counter {
+                top: 70px;
+                font-size: 0.8rem;
+                padding: 0.3rem 1rem;
+            }
+            
+            .live-clock {
+                bottom: 80px;
+                left: 10px;
+                padding: 0.5rem 1rem;
+                font-size: 0.8rem;
+            }
+            
+            .live-clock .date {
+                display: none;
+            }
+            
+            .quick-contact {
+                bottom: 80px;
+                right: 10px;
+            }
+            
+            .contact-float-btn {
+                width: 50px;
+                height: 50px;
+                font-size: 1.2rem;
+            }
+        }
+
+        /* Navigation */
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(10,10,15,0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+        }
+
+        .nav-container {
+            padding: 1rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: var(--light);
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover, .nav-links a.active {
+            color: var(--primary);
+        }
+
+        .menu-btn {
+            display: none;
+            font-size: 2rem;
+            cursor: pointer;
+        }
+
+        .mobile-menu {
+            position: fixed;
+            top: 70px;
+            left: -100%;
+            width: 100%;
+            height: calc(100vh - 70px);
+            background: var(--dark);
+            z-index: 999;
+            transition: 0.3s;
+            padding: 2rem;
+        }
+
+        .mobile-menu.active {
+            left: 0;
+        }
+
+        .mobile-menu a {
+            display: block;
+            color: var(--light);
+            text-decoration: none;
+            font-size: 1.5rem;
+            margin: 2rem 0;
+            text-align: center;
+        }
+
+        /* Back Button */
+        .back-btn {
+            position: fixed;
+            top: 80px;
+            left: 20px;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: rgba(108,92,231,0.2);
+            border: 1px solid rgba(108,92,231,0.3);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            z-index: 99;
+            transition: 0.3s;
+        }
+
+        .back-btn:hover {
+            background: var(--primary);
+            transform: translateX(-5px);
+        }
+
+        /* Main Content */
+        .container {
+            max-width: 1400px;
+            margin: 100px auto 50px;
+            padding: 0 5%;
+        }
+
+        .page-title {
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-align: center;
+        }
+
+        .page-subtitle {
+            text-align: center;
+            color: var(--gray);
+            margin-bottom: 3rem;
+            font-size: 1.1rem;
+        }
+
+        /* Skills Grid */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .skill-category {
+            background: rgba(255,255,255,0.03);
+            border-radius: 25px;
+            padding: 2rem;
+            border: 1px solid rgba(108,92,231,0.2);
+            transition: 0.3s;
+            backdrop-filter: blur(10px);
+        }
+
+        .skill-category:hover {
+            transform: translateY(-8px);
+            border-color: var(--primary);
+            box-shadow: 0 20px 40px rgba(108,92,231,0.2);
+        }
+
+        .skill-category h2 {
+            color: var(--primary);
+            margin-bottom: 2rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            font-size: 1.8rem;
+            border-bottom: 2px solid rgba(108,92,231,0.2);
+            padding-bottom: 1rem;
+        }
+
+        .skill-category h2 i {
+            font-size: 2rem;
+        }
+
+        /* Java Specific Styling */
+        .java-category {
+            border-left: 4px solid var(--java);
+        }
+
+        .java-category h2 {
+            color: var(--java);
+        }
+
+        .java-tag {
+            background: rgba(248, 152, 32, 0.15);
+            border-color: var(--java);
+            color: #ffb347;
+        }
+
+        .java-tag:hover {
+            background: var(--java);
+            color: var(--dark);
+        }
+
+        /* Spring Specific */
+        .spring-tag {
+            background: rgba(109, 179, 63, 0.15);
+            border-color: var(--spring);
+            color: #90ee90;
+        }
+
+        .spring-tag:hover {
+            background: var(--spring);
+            color: var(--dark);
+        }
+
+        /* Android Specific */
+        .android-tag {
+            background: rgba(61, 220, 132, 0.15);
+            border-color: var(--android);
+            color: #a5d6a5;
+        }
+
+        .android-tag:hover {
+            background: var(--android);
+            color: var(--dark);
+        }
+
+        .skill-items {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+        }
+
+        .skill-tag {
+            padding: 0.6rem 1.2rem;
+            background: rgba(108,92,231,0.1);
+            border: 1px solid rgba(108,92,231,0.3);
+            border-radius: 50px;
+            color: var(--light);
+            font-size: 0.9rem;
+            transition: 0.3s;
+            cursor: default;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .skill-tag i {
+            font-size: 1rem;
+            opacity: 0.8;
+        }
+
+        .skill-tag:hover {
+            background: var(--primary);
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(108,92,231,0.4);
+        }
+
+        /* Skill Level Indicator */
+        .skill-level {
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            margin-left: 5px;
+        }
+
+        .level-expert {
+            background: #10b981;
+            box-shadow: 0 0 10px #10b981;
+        }
+
+        .level-advanced {
+            background: #f59e0b;
+            box-shadow: 0 0 10px #f59e0b;
+        }
+
+        .level-intermediate {
+            background: #3b82f6;
+            box-shadow: 0 0 10px #3b82f6;
+        }
+
+        /* Stats Cards */
+        .stats-row {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1.5rem;
+            margin: 3rem 0;
+        }
+
+        .stat-card {
+            background: rgba(255,255,255,0.02);
+            border-radius: 15px;
+            padding: 1.5rem;
+            text-align: center;
+            border: 1px solid rgba(108,92,231,0.2);
+        }
+
+        .stat-number {
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 0.3rem;
+        }
+
+        .stat-label {
+            color: var(--gray);
+            font-size: 0.9rem;
+        }
+
+        /* KI Section */
+        .ki-section {
+            margin-top: 4rem;
+            text-align: center;
+            padding: 3rem;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            border-radius: 30px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .ki-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.2) 0%, transparent 50%);
+            animation: rotate 20s linear infinite;
+        }
+
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .ki-section h3 {
+            font-size: 2.2rem;
+            margin-bottom: 1rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .ki-section p {
+            position: relative;
+            z-index: 1;
+            opacity: 0.9;
+        }
+
+        .ki-btn {
+            display: inline-block;
+            padding: 1rem 3rem;
+            background: white;
+            color: var(--primary);
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            margin-top: 1.5rem;
+            transition: 0.3s;
+            position: relative;
+            z-index: 1;
+        }
+
+        .ki-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+        }
+
+        .ki-btn i {
+            margin-left: 8px;
+            transition: 0.3s;
+        }
+
+        .ki-btn:hover i {
+            transform: translateX(5px);
+        }
+
+        /* Footer Links */
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 4rem;
+            flex-wrap: wrap;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(108,92,231,0.2);
+        }
+
+        .footer-links a {
+            color: var(--gray);
+            text-decoration: none;
+            transition: 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .footer-links a:hover {
+            color: var(--primary);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .menu-btn {
+                display: block;
+            }
+            
+            .page-title {
+                font-size: 2.2rem;
+            }
+            
+            .back-btn {
+                top: 70px;
+                left: 10px;
+                width: 40px;
+                height: 40px;
+            }
+            
+            .skill-category {
+                padding: 1.5rem;
+            }
+            
+            .skill-category h2 {
+                font-size: 1.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .page-title {
+                font-size: 1.8rem;
+            }
+            
+            .skill-tag {
+                padding: 0.5rem 1rem;
+                font-size: 0.8rem;
+            }
+            
+            .ki-section {
+                padding: 2rem;
+            }
+            
+            .ki-section h3 {
+                font-size: 1.5rem;
+            }
+        }
+
+        /* Animation */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .skill-category {
+            animation: fadeIn 0.6s ease forwards;
+        }
+
+        .skill-category:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+
+        .skill-category:nth-child(3) {
+            animation-delay: 0.4s;
+        }
+
+        .skill-category:nth-child(4) {
+            animation-delay: 0.6s;
+        }
+        .skill-category:nth-child(5) {
+            animation-delay: 0.8s;
+        }
+        .skill-category:nth-child(6) {
+            animation-delay: 1s;
+        }
+        .skill-category:nth-child(7) {
+            animation-delay: 1.2s;
+        }
+    </style>
+</head>
+<body>
+    <!-- Scroll Progress Bar -->
+    <div class="scroll-progress" id="scrollProgress"></div>
+
+    <!-- Live Clock -->
+    <div class="live-clock" id="liveClock">
+        <i class="fas fa-clock"></i>
+        <span class="time" id="time">--:--:--</span>
+        <span class="date" id="date">---, -- ----</span>
+    </div>
+
+    <!-- View Counter -->
+    <div class="view-counter">
+        <i class="fas fa-eye"></i>
+        <span>Views: <span class="counter-number" id="viewCount">1,234</span></span>
+    </div>
+
+    <!-- Floating Social Icons (Desktop) -->
+    <div class="floating-social">
+        <a href="https://github.com/CodeGoManish" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+        <a href="https://www.linkedin.com/in/manish-gupta-a0a671208/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+        <a href="mailto:manish05453@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
+    </div>
+
+    <!-- Quick Contact Floating Button -->
+    <div class="quick-contact">
+        <a href="tel:+919876543210" class="contact-float-btn">
+            <i class="fas fa-phone-alt"></i>
+            <span class="tooltip">Call Me</span>
+        </a>
+        <a href="https://wa.me/919876543210" target="_blank" class="contact-float-btn">
+            <i class="fab fa-whatsapp"></i>
+            <span class="tooltip">WhatsApp</span>
+        </a>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">CodeGoManish</a>
+            
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="skills.html" class="active">Skills</a>
+                <a href="projects.html">Projects</a>
+                <a href="contact.html">Contact</a>
+            </div>
+
+            <div class="menu-btn" onclick="toggleMenu()">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="index.html" onclick="toggleMenu()">Home</a>
+        <a href="about.html" onclick="toggleMenu()">About</a>
+        <a href="skills.html" onclick="toggleMenu()">Skills</a>
+        <a href="projects.html" onclick="toggleMenu()">Projects</a>
+        <a href="contact.html" onclick="toggleMenu()">Contact</a>
+        <a href="AI.html" onclick="toggleMenu()">KI Assistant</a>
+        <a href="neon.html" onclick="toggleMenu()">Neon</a>
+    </div>
+
+    <!-- Back Button -->
+    <a href="javascript:history.back()" class="back-btn">
+        <i class="fas fa-arrow-left"></i>
+    </a>
+
+    <!-- Main Content -->
+    <div class="container">
+        <h1 class="page-title">Technical Skills</h1>
+        <p class="page-subtitle">Specialized in Java Development & Multimedia Creation</p>
+
+        <!-- Stats Row -->
+        <div class="stats-row">
+            <div class="stat-card">
+                <div class="stat-number">2+</div>
+                <div class="stat-label">Years Java</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">10+</div>
+                <div class="stat-label">Java Projects</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">5+</div>
+                <div class="stat-label">Certifications</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">50+</div>
+                <div class="stat-label">Videos Edited</div>
+            </div>
+        </div>
+
+        <div class="skills-grid">
+            <!-- JAVA DEVELOPMENT -->
+            <div class="skill-category java-category">
+                <h2><i class="fab fa-java"></i> Java Development</h2>
+                <div class="skill-items">
+                    <span class="skill-tag java-tag"><i class="fas fa-coffee"></i> Core Java <span class="skill-level level-expert"></span></span>
+                    <span class="skill-tag java-tag"><i class="fas fa-cubes"></i> OOPs Concepts</span>
+                    <span class="skill-tag java-tag"><i class="fas fa-layer-group"></i> Collections Framework</span>
+                    <span class="skill-tag java-tag"><i class="fas fa-exclamation-triangle"></i> Exception Handling</span>
+                    <span class="skill-tag java-tag"><i class="fas fa-tasks"></i> Multithreading</span>
+                    <span class="skill-tag java-tag"><i class="fas fa-stream"></i> Streams API</span>
+                    <span class="skill-tag java-tag"><i class="fas fa-database"></i> JDBC</span>
+                    <span class="skill-tag java-tag"><i class="fas fa-file-code"></i> Java 8/11/17</span>
+                    <span class="skill-tag java-tag"><i class="fas fa-code-branch"></i> Generics</span>
+                    <span class="skill-tag java-tag"><i class="fas fa-plug"></i> Lambda Expressions</span>
+                </div>
+            </div>
+
+            <!-- Java Frameworks & Tools -->
+            <div class="skill-category">
+                <h2><i class="fas fa-tools"></i> Java Frameworks</h2>
+                <div class="skill-items">
+                    <span class="skill-tag spring-tag"><i class="fas fa-leaf"></i> Spring Boot</span>
+                    <span class="skill-tag spring-tag"><i class="fas fa-project-diagram"></i> Spring MVC</span>
+                    <span class="skill-tag spring-tag"><i class="fas fa-database"></i> Spring Data JPA</span>
+                    <span class="skill-tag spring-tag"><i class="fas fa-lock"></i> Spring Security</span>
+                    <span class="skill-tag"><i class="fas fa-cube"></i> Hibernate</span>
+                    <span class="skill-tag"><i class="fas fa-box"></i> Maven</span>
+                    <span class="skill-tag"><i class="fas fa-cog"></i> Gradle</span>
+                    <span class="skill-tag"><i class="fas fa-tasks"></i> JUnit</span>
+                    <span class="skill-tag"><i class="fas fa-vial"></i> Mockito</span>
+                    <span class="skill-tag"><i class="fas fa-code"></i> Lombok</span>
+                </div>
+            </div>
+
+            <!-- Web Development -->
+            <div class="skill-category">
+                <h2><i class="fas fa-code"></i> Web Development</h2>
+                <div class="skill-items">
+                    <span class="skill-tag">HTML5 <span class="skill-level level-expert"></span></span>
+                    <span class="skill-tag">CSS3 <span class="skill-level level-expert"></span></span>
+                    <span class="skill-tag">JavaScript <span class="skill-level level-advanced"></span></span>
+                    <span class="skill-tag">React</span>
+                    <span class="skill-tag">Node.js</span>
+                    <span class="skill-tag">Bootstrap</span>
+                    <span class="skill-tag">Tailwind</span>
+                    <span class="skill-tag">JSP/Servlets</span>
+                </div>
+            </div>
+
+            <!-- App Development -->
+            <div class="skill-category">
+                <h2><i class="fas fa-mobile-alt"></i> App Development</h2>
+                <div class="skill-items">
+                    <span class="skill-tag android-tag"><i class="fab fa-android"></i> Android (Java)</span>
+                    <span class="skill-tag android-tag"><i class="fab fa-android"></i> Android Studio</span>
+                    <span class="skill-tag">Flutter</span>
+                    <span class="skill-tag">Kotlin</span>
+                    <span class="skill-tag">Firebase</span>
+                    <span class="skill-tag">REST APIs</span>
+                    <span class="skill-tag">XML</span>
+                    <span class="skill-tag">Material Design</span>
+                </div>
+            </div>
+
+            <!-- Programming & Databases -->
+            <div class="skill-category">
+                <h2><i class="fas fa-database"></i> Programming & Databases</h2>
+                <div class="skill-items">
+                    <span class="skill-tag java-tag"><i class="fab fa-java"></i> Java <span class="skill-level level-expert"></span></span>
+                    <span class="skill-tag">Python</span>
+                    <span class="skill-tag">Dart</span>
+                    <span class="skill-tag">SQL</span>
+                    <span class="skill-tag">MySQL</span>
+                    <span class="skill-tag">MongoDB</span>
+                    <span class="skill-tag">Kali Linux</span>
+                    <span class="skill-tag">Data Structures</span>
+                    <span class="skill-tag">Algorithms</span>
+                </div>
+            </div>
+
+            <!-- Multimedia & Creative -->
+            <div class="skill-category">
+                <h2><i class="fas fa-video"></i> Multimedia & Creative</h2>
+                <div class="skill-items">
+                    <span class="skill-tag"><i class="fas fa-video"></i> Video Editing <span class="skill-level level-advanced"></span></span>
+                    <span class="skill-tag"><i class="fas fa-film"></i> Premiere Pro</span>
+                    <span class="skill-tag"><i class="fas fa-cut"></i> Final Cut Pro</span>
+                    <span class="skill-tag"><i class="fas fa-magic"></i> After Effects</span>
+                    <span class="skill-tag"><i class="fas fa-play"></i> DaVinci Resolve</span>
+                    <span class="skill-tag"><i class="fas fa-pen"></i> Script Writer</span>
+                    <span class="skill-tag"><i class="fas fa-feather"></i> Content Writing</span>
+                    <span class="skill-tag"><i class="fas fa-scroll"></i> Screenplay</span>
+                    <span class="skill-tag"><i class="fas fa-book-open"></i> Story Writing</span>
+                    <span class="skill-tag"><i class="fas fa-microphone-alt"></i> Dialogue Writing</span>
+                    <span class="skill-tag"><i class="fas fa-palette"></i> Canva</span>
+                    <span class="skill-tag"><i class="fas fa-camera"></i> Photography</span>
+                    <span class="skill-tag"><i class="fas fa-vector-square"></i> Photoshop</span>
+                    <span class="skill-tag"><i class="fas fa-pen-fancy"></i> Illustrator</span>
+                    <span class="skill-tag"><i class="fas fa-podcast"></i> Content Creator</span>
+                    <span class="skill-tag"><i class="fas fa-youtube"></i> YouTube Scripts</span>
+                    <span class="skill-tag"><i class="fas fa-tiktok"></i> Short Form Content</span>
+                </div>
+            </div>
+
+            <!-- Development Tools -->
+            <div class="skill-category">
+                <h2><i class="fas fa-wrench"></i> Development Tools</h2>
+                <div class="skill-items">
+                    <span class="skill-tag"><i class="fas fa-code"></i> VS Code</span>
+                    <span class="skill-tag"><i class="fas fa-code"></i> IntelliJ IDEA</span>
+                    <span class="skill-tag"><i class="fas fa-code"></i> Eclipse</span>
+                    <span class="skill-tag"><i class="fab fa-git-alt"></i> Git</span>
+                    <span class="skill-tag"><i class="fab fa-github"></i> GitHub</span>
+                    <span class="skill-tag"><i class="fas fa-cloud"></i> Postman</span>
+                    <span class="skill-tag"><i class="fas fa-terminal"></i> Linux</span>
+                    <span class="skill-tag"><i class="fas fa-docker"></i> Docker</span>
+                    <span class="skill-tag"><i class="fas fa-database"></i> MySQL Workbench</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Java Proficiency Section -->
+        <div class="stats-row" style="margin-top: 2rem;">
+            <div class="stat-card">
+                <div class="stat-number">8/10</div>
+                <div class="stat-label">Core Java</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">7/10</div>
+                <div class="stat-label">Spring Boot</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">8/10</div>
+                <div class="stat-label">Android (Java,Flutter)</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">9/10</div>
+                <div class="stat-label">Video Editing</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">8/10</div>
+                <div class="stat-label">Script Writing</div>
+            </div>
+        </div>
+
+        <!-- KI Section -->
+        <div class="ki-section">
+            <h3>Meet KI - My Virtual Assistant</h3>
+            <p>Built with Java concepts & speech recognition</p>
+            <a href="AI.html" class="ki-btn">
+                Talk to KI <i class="fas fa-robot"></i>
+            </a>
+        </div>
+
+        <!-- Footer Links -->
+        <div class="footer-links">
+            <a href="index.html"><i class="fas fa-home"></i> Home</a>
+            <a href="about.html"><i class="fas fa-user"></i> About</a>
+            <a href="projects.html"><i class="fas fa-code"></i> Projects</a>
+            <a href="contact.html"><i class="fas fa-envelope"></i> Contact</a>
+            <a href="AI.html"><i class="fas fa-robot"></i> KI</a>
+            <a href="neon.html"><i class="fas fa-bolt"></i> Neon</a>
+        </div>
+    </div>
+
+    <script>
+        function toggleMenu() {
+            document.getElementById('mobileMenu').classList.toggle('active');
+        }
+
+        // Close menu when clicking outside
+        document.addEventListener('click', function(e) {
+            const menu = document.getElementById('mobileMenu');
+            const btn = document.querySelector('.menu-btn');
+            
+            if (menu && !menu.contains(e.target) && !btn.contains(e.target)) {
+                menu.classList.remove('active');
+            }
+        });
+
+        // Add animation on scroll
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        });
+
+        document.querySelectorAll('.skill-category').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(20px)';
+            observer.observe(el);
+        });
+
+        // ===== ADVANCED FEATURES =====
+
+        // Scroll Progress Bar
+        window.addEventListener('scroll', function() {
+            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (winScroll / height) * 100;
+            document.getElementById('scrollProgress').style.width = scrolled + '%';
+        });
+
+        // Live Clock
+        function updateClock() {
+            const now = new Date();
+            
+            // Time
+            const timeStr = now.toLocaleTimeString('en-US', { 
+                hour: '2-digit', 
+                minute: '2-digit', 
+                second: '2-digit',
+                hour12: true 
+            });
+            
+            // Date
+            const dateStr = now.toLocaleDateString('en-US', { 
+                weekday: 'short', 
+                day: 'numeric', 
+                month: 'short',
+                year: 'numeric'
+            });
+            
+            document.getElementById('time').textContent = timeStr;
+            document.getElementById('date').textContent = dateStr;
+        }
+
+        setInterval(updateClock, 1000);
+        updateClock();
+
+        // View Counter (simulated)
+        let views = localStorage.getItem('skillsViews') || 3456;
+        views = parseInt(views) + 1;
+        localStorage.setItem('skillsViews', views);
+        document.getElementById('viewCount').textContent = views.toLocaleString();
+
+        // Log to console
+        console.log('🛠️ Skills Page - Manish Gupta');
+        console.log('📊 Skills Page Views:', views);
+        console.log('🕒 Current Time:', new Date().toLocaleString());
+        console.log('📚 Total Skill Categories: 7');
+        console.log('🏷️ Total Skills: ~100+');
+    </script>
+</body>
+</html>

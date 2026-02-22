@@ -1,0 +1,746 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+    <title>Manish Gupta | Resume & Certificates</title>
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #6c5ce7;
+            --secondary: #a463f5;
+            --accent: #00d2d3;
+            --dark: #0a0a0f;
+            --darker: #050508;
+            --light: #ffffff;
+            --gray: #b0b0c0;
+            --gradient: linear-gradient(135deg, var(--primary), var(--secondary));
+            --shadow: 0 20px 40px rgba(108, 92, 231, 0.3);
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: var(--darker);
+            color: var(--light);
+            min-height: 100vh;
+            line-height: 1.6;
+        }
+
+        /* Navigation */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(10, 10, 15, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            border-bottom: 1px solid rgba(108, 92, 231, 0.3);
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 1rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 2rem;
+            font-weight: 800;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+        }
+
+        .nav-links a {
+            color: var(--light);
+            text-decoration: none;
+            font-weight: 500;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .menu-btn {
+            display: none;
+            font-size: 2rem;
+            cursor: pointer;
+        }
+
+        /* Mobile Menu */
+        .mobile-menu {
+            position: fixed;
+            top: 0;
+            right: -100%;
+            width: 80%;
+            max-width: 400px;
+            height: 100vh;
+            background: var(--dark);
+            z-index: 1001;
+            padding: 100px 40px;
+            transition: 0.3s;
+            border-left: 1px solid rgba(108, 92, 231, 0.3);
+        }
+
+        .mobile-menu.active {
+            right: 0;
+        }
+
+        .mobile-menu a {
+            display: block;
+            color: var(--light);
+            text-decoration: none;
+            font-size: 1.5rem;
+            margin: 30px 0;
+            transition: 0.3s;
+        }
+
+        .mobile-menu a:hover {
+            color: var(--primary);
+            transform: translateX(10px);
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 30px;
+            right: 30px;
+            font-size: 2rem;
+            cursor: pointer;
+        }
+
+        /* Back Button */
+        .back-btn {
+            position: fixed;
+            top: 100px;
+            left: 30px;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: rgba(108, 92, 231, 0.2);
+            border: 1px solid rgba(108, 92, 231, 0.3);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            z-index: 99;
+            transition: 0.3s;
+            backdrop-filter: blur(10px);
+        }
+
+        .back-btn:hover {
+            background: var(--gradient);
+            transform: translateX(-5px);
+            box-shadow: var(--shadow);
+        }
+
+        /* Main Container */
+        .container {
+            max-width: 1400px;
+            margin: 120px auto 50px;
+            padding: 0 5%;
+        }
+
+        /* Header Section */
+        .header-section {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .page-title {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .page-subtitle {
+            color: var(--gray);
+            font-size: 1.1rem;
+        }
+
+        /* PDF Container */
+        .pdf-container {
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 30px;
+            padding: 2rem;
+            border: 1px solid rgba(108, 92, 231, 0.2);
+            backdrop-filter: blur(10px);
+            margin-bottom: 2rem;
+        }
+
+        .pdf-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .pdf-title {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .pdf-title i {
+            font-size: 2rem;
+            color: var(--primary);
+        }
+
+        .pdf-title h2 {
+            font-size: 1.5rem;
+            color: var(--light);
+        }
+
+        .pdf-controls {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .pdf-btn {
+            padding: 0.8rem 1.5rem;
+            border-radius: 50px;
+            border: 1px solid rgba(108, 92, 231, 0.3);
+            background: rgba(108, 92, 231, 0.1);
+            color: white;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            text-decoration: none;
+        }
+
+        .pdf-btn:hover {
+            background: var(--gradient);
+            transform: translateY(-2px);
+            border-color: transparent;
+        }
+
+        .pdf-btn i {
+            font-size: 1rem;
+        }
+
+        /* PDF Viewer */
+        .pdf-viewer {
+            width: 100%;
+            height: 700px;
+            border: 2px solid rgba(108, 92, 231, 0.3);
+            border-radius: 20px;
+            overflow: hidden;
+            background: rgba(0, 0, 0, 0.2);
+        }
+
+        .pdf-viewer embed,
+        .pdf-viewer iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        /* Alternative Viewer (for mobile) */
+        .mobile-pdf-viewer {
+            display: none;
+            text-align: center;
+            padding: 3rem;
+            background: rgba(108, 92, 231, 0.1);
+            border-radius: 20px;
+            border: 1px solid rgba(108, 92, 231, 0.3);
+        }
+
+        .mobile-pdf-viewer i {
+            font-size: 5rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .mobile-pdf-viewer h3 {
+            margin-bottom: 1rem;
+        }
+
+        .mobile-pdf-viewer p {
+            color: var(--gray);
+            margin-bottom: 2rem;
+        }
+
+        .download-big-btn {
+            display: inline-block;
+            padding: 1rem 3rem;
+            background: var(--gradient);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        .download-big-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow);
+        }
+
+        /* Other Documents Section */
+        .docs-section {
+            margin-top: 3rem;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            color: var(--light);
+            text-align: center;
+        }
+
+        .docs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .doc-card {
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 20px;
+            padding: 1.5rem;
+            border: 1px solid rgba(108, 92, 231, 0.2);
+            transition: 0.3s;
+            text-align: center;
+        }
+
+        .doc-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary);
+        }
+
+        .doc-icon {
+            font-size: 3rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .doc-card h3 {
+            margin-bottom: 0.5rem;
+        }
+
+        .doc-card p {
+            color: var(--gray);
+            font-size: 0.9rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .doc-link {
+            display: inline-block;
+            padding: 0.6rem 1.5rem;
+            background: rgba(108, 92, 231, 0.1);
+            border: 1px solid rgba(108, 92, 231, 0.3);
+            border-radius: 50px;
+            color: white;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .doc-link:hover {
+            background: var(--gradient);
+        }
+
+        /* Footer */
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 4rem;
+            flex-wrap: wrap;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(108, 92, 231, 0.2);
+        }
+
+        .footer-links a {
+            color: var(--gray);
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: var(--primary);
+        }
+
+        /* Loading Animation */
+        .loader {
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            border: 3px solid rgba(108, 92, 231, 0.3);
+            border-radius: 50%;
+            border-top-color: var(--primary);
+            animation: spin 1s ease-in-out infinite;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        /* Responsive */
+        @media (max-width: 992px) {
+            .page-title {
+                font-size: 2.5rem;
+            }
+            
+            .pdf-viewer {
+                height: 600px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .menu-btn {
+                display: block;
+            }
+            
+            .back-btn {
+                top: 80px;
+                left: 20px;
+                width: 40px;
+                height: 40px;
+            }
+            
+            .page-title {
+                font-size: 2rem;
+            }
+            
+            .pdf-container {
+                padding: 1rem;
+            }
+            
+            .pdf-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .pdf-controls {
+                width: 100%;
+            }
+            
+            .pdf-btn {
+                flex: 1;
+                text-align: center;
+                justify-content: center;
+            }
+            
+            .pdf-viewer {
+                height: 500px;
+            }
+            
+            /* Show mobile viewer, hide embed on mobile */
+            .pdf-viewer {
+                display: none;
+            }
+            
+            .mobile-pdf-viewer {
+                display: block;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .page-title {
+                font-size: 1.8rem;
+            }
+            
+            .pdf-viewer {
+                height: 400px;
+            }
+            
+            .pdf-controls {
+                flex-direction: column;
+            }
+            
+            .docs-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .mobile-pdf-viewer {
+                padding: 2rem;
+            }
+            
+            .mobile-pdf-viewer i {
+                font-size: 4rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">CodeGoManish</a>
+            
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="skills.html">Skills</a>
+                <a href="projects.html">Projects</a>
+                <a href="contact.html">Contact</a>
+            </div>
+
+            <div class="menu-btn" onclick="toggleMenu()">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <div class="close-btn" onclick="toggleMenu()">
+            <i class="fas fa-times"></i>
+        </div>
+        <a href="index.html" onclick="toggleMenu()">Home</a>
+        <a href="about.html" onclick="toggleMenu()">About</a>
+        <a href="skills.html" onclick="toggleMenu()">Skills</a>
+        <a href="projects.html" onclick="toggleMenu()">Projects</a>
+        <a href="contact.html" onclick="toggleMenu()">Contact</a>
+        <a href="AI.html" onclick="toggleMenu()">KI Assistant</a>
+    </div>
+
+    <!-- Back Button -->
+    <a href="javascript:history.back()" class="back-btn">
+        <i class="fas fa-arrow-left"></i>
+    </a>
+
+    <!-- Main Container -->
+    <div class="container">
+        <!-- Header -->
+        <div class="header-section">
+            <h1 class="page-title">My Resume & Documents</h1>
+            <p class="page-subtitle">View and download my professional documents</p>
+        </div>
+
+        <!-- PDF Container -->
+        <div class="pdf-container">
+            <div class="pdf-header">
+                <div class="pdf-title">
+                    <i class="fas fa-file-pdf"></i>
+                    <h2>Resume - Manish Gupta</h2>
+                </div>
+                
+                <div class="pdf-controls">
+                    <a href="F:\Download Chrome\gopdf.pdf" download class="pdf-btn">
+                        <i class="fas fa-download"></i> Download
+                    </a>
+                    <a href="F:\Download Chrome\gopdf.pdf" target="_blank" class="pdf-btn">
+                        <i class="fas fa-external-link-alt"></i> Open in New Tab
+                    </a>
+                    <button onclick="printPDF()" class="pdf-btn">
+                        <i class="fas fa-print"></i> Print
+                    </button>
+                </div>
+            </div>
+
+            <!-- PDF Viewer (Desktop) -->
+            <div class="pdf-viewer" id="pdfViewer">
+                <embed src="F:\Download Chrome\gopdf.pdf" type="application/pdf" />
+            </div>
+
+            <!-- Mobile PDF Viewer Alternative -->
+            <div class="mobile-pdf-viewer">
+                <i class="fas fa-file-pdf"></i>
+                <h3>PDF Viewer Not Available</h3>
+                <p>Your mobile device might not support inline PDF viewing. Please download the file to view it.</p>
+                <a href="F:\Download Chrome\gopdf.pdf" download class="download-big-btn">
+                    <i class="fas fa-download"></i> Download PDF
+                </a>
+            </div>
+        </div>
+
+        <!-- Other Documents Section -->
+        <div class="docs-section">
+            <h2 class="section-title">Other Documents</h2>
+            
+            <div class="docs-grid">
+                <!-- Certificate 1 -->
+                <div class="doc-card">
+                    <div class="doc-icon">
+                        <i class="fas fa-certificate"></i>
+                    </div>
+                    <h3>Google Garage Certificate</h3>
+                    <p>Digital Marketing Certification</p>
+                    <a href="#" class="doc-link" onclick="showComingSoon()">
+                        <i class="fas fa-eye"></i> View
+                    </a>
+                </div>
+
+                <!-- Certificate 2 -->
+                <div class="doc-card">
+                    <div class="doc-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h3>Data Science Certificate</h3>
+                    <p>IIT Madras - Data Science Program</p>
+                    <a href="#" class="doc-link" onclick="showComingSoon()">
+                        <i class="fas fa-eye"></i> View
+                    </a>
+                </div>
+
+                <!-- Certificate 3 -->
+                <div class="doc-card">
+                    <div class="doc-icon">
+                        <i class="fas fa-trophy"></i>
+                    </div>
+                    <h3>Achievement Certificate</h3>
+                    <p>NMMSS Scholarship Award</p>
+                    <a href="#" class="doc-link" onclick="showComingSoon()">
+                        <i class="fas fa-eye"></i> View
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer Navigation -->
+        <div class="footer-links">
+            <a href="index.html"><i class="fas fa-home"></i> Home</a>
+            <a href="about.html"><i class="fas fa-user"></i> About</a>
+            <a href="skills.html"><i class="fas fa-code"></i> Skills</a>
+            <a href="projects.html"><i class="fas fa-project-diagram"></i> Projects</a>
+            <a href="contact.html"><i class="fas fa-envelope"></i> Contact</a>
+            <a href="AI.html"><i class="fas fa-robot"></i> KI</a>
+        </div>
+    </div>
+
+    <script>
+        // Mobile Menu Toggle
+        function toggleMenu() {
+            document.getElementById('mobileMenu').classList.toggle('active');
+        }
+
+        // Close menu when clicking outside
+        document.addEventListener('click', function(event) {
+            const menu = document.getElementById('mobileMenu');
+            const menuBtn = document.querySelector('.menu-btn');
+            
+            if (menu.classList.contains('active') && 
+                !menu.contains(event.target) && 
+                !menuBtn.contains(event.target)) {
+                menu.classList.remove('active');
+            }
+        });
+
+        // Print PDF function
+        function printPDF() {
+            const pdfUrl = "F:\\Download Chrome\\gopdf.pdf";
+            
+            // Create an iframe for printing
+            const iframe = document.createElement('iframe');
+            iframe.style.display = 'none';
+            iframe.src = pdfUrl;
+            document.body.appendChild(iframe);
+            
+            iframe.onload = function() {
+                setTimeout(function() {
+                    iframe.contentWindow.print();
+                }, 1000);
+            };
+        }
+
+        // Show coming soon message for other documents
+        function showComingSoon() {
+            alert('📄 This document will be available soon!');
+        }
+
+        // Check if browser supports PDF embedding
+        function checkPDFSupport() {
+            const viewer = document.getElementById('pdfViewer');
+            const userAgent = navigator.userAgent.toLowerCase();
+            
+            // Check if mobile device
+            if (/android|webos|iphone|ipad|ipod|blackberry|iemobile|opera mini/i.test(userAgent)) {
+                // Mobile devices often have issues with PDF embedding
+                viewer.style.display = 'none';
+            } else {
+                // Desktop - try to use iframe as fallback
+                const embed = viewer.querySelector('embed');
+                if (embed) {
+                    // Test if PDF loaded
+                    setTimeout(() => {
+                        try {
+                            // If PDF didn't load, try iframe
+                            if (!embed.style.display || embed.style.display === 'none') {
+                                throw new Error('PDF not loaded');
+                            }
+                        } catch (e) {
+                            // Fallback to iframe
+                            viewer.innerHTML = '<iframe src="F:\\Download Chrome\\gopdf.pdf" width="100%" height="100%" frameborder="0"></iframe>';
+                        }
+                    }, 2000);
+                }
+            }
+        }
+
+        // Run on load
+        window.addEventListener('load', function() {
+            checkPDFSupport();
+            
+            // Add loading animation
+            const pdfViewer = document.getElementById('pdfViewer');
+            pdfViewer.innerHTML = '<div style="text-align: center; padding: 50px;"><div class="loader"></div><p style="margin-top: 20px;">Loading PDF...</p></div>';
+            
+            // Simulate load time
+            setTimeout(() => {
+                pdfViewer.innerHTML = '<embed src="F:\\Download Chrome\\gopdf.pdf" type="application/pdf" width="100%" height="100%" />';
+            }, 1500);
+        });
+
+        // Handle file path errors
+        window.addEventListener('error', function(e) {
+            if (e.target.tagName === 'EMBED' || e.target.tagName === 'IFRAME') {
+                const pdfViewer = document.getElementById('pdfViewer');
+                pdfViewer.innerHTML = `
+                    <div style="text-align: center; padding: 50px;">
+                        <i class="fas fa-exclamation-triangle" style="font-size: 4rem; color: #ff6b6b; margin-bottom: 20px;"></i>
+                        <h3>PDF Could Not Be Loaded</h3>
+                        <p style="color: var(--gray); margin: 20px 0;">Please download the file to view it.</p>
+                        <a href="F:\\Download Chrome\\gopdf.pdf" download class="pdf-btn" style="display: inline-block;">
+                            <i class="fas fa-download"></i> Download PDF
+                        </a>
+                    </div>
+                `;
+            }
+        }, true);
+
+        // Add keyboard shortcut (Ctrl+P) for printing
+        document.addEventListener('keydown', function(e) {
+            if (e.ctrlKey && e.key === 'p') {
+                e.preventDefault();
+                printPDF();
+            }
+        });
+    </script>
+</body>
+</html>

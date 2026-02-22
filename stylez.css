@@ -1,0 +1,38 @@
+/* Basic styling for the entire page */
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #f4f4f4;
+    padding: 20px;
+}
+
+/* By default, the main content is visible */
+#main-content {
+    display: block;
+}
+
+/* By default, the mobile warning is hidden */
+#mobile-warning {
+    display: none; /* This is the initial state */
+    background-color: #ffdddd;
+    padding: 20px;
+    border: 1px solid #d8000c;
+    border-radius: 5px;
+    color: #d8000c; /* Added for better text visibility */
+}
+
+
+/* --- THE MAGIC HAPPENS HERE --- */
+/* This media query targets any screen with a max-width of 600px */
+@media (max-width: 600px) {
+    
+    /* On small screens, HIDE the main content */
+    #main-content {
+        display: none;
+    }
+
+    /* On small screens, SHOW the mobile warning */
+    #mobile-warning {
+        display: block;
+    }
+}
