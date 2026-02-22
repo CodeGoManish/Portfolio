@@ -4,12 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
     
-    <!-- ===== SEO & META TAGS ===== -->
+    <!-- ===== ADVANCED SEO & META TAGS ===== -->
     <title>Contact Me | Manish Gupta - Java Developer</title>
-    <meta name="description" content="Get in touch with Manish Gupta - Software Java Developer">
+    <meta name="description" content="Get in touch with Manish Gupta - Software Java Developer, Full Stack Developer, and Content Creator.">
+    <meta name="keywords" content="Contact Manish Gupta, Java Developer Contact, Hire Java Developer">
     <meta name="author" content="Manish Gupta">
+    <meta name="robots" content="index, follow">
     
-    <!-- ===== FAVICON ===== -->
+    <!-- Open Graph / Social Media Meta Tags -->
+    <meta property="og:title" content="Contact Manish Gupta - Java Developer">
+    <meta property="og:description" content="Get in touch for collaborations, projects, or opportunities.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://codegomanish.github.io/contact.html">
+    <meta property="og:image" content="https://via.placeholder.com/1200x630/667eea/ffffff?text=Contact+Manish+Gupta">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Contact Manish Gupta - Java Developer">
+    <meta name="twitter:description" content="Get in touch for collaborations, projects, or opportunities.">
+    
+    <!-- ===== PROFESSIONAL FAVICONS ===== -->
     <link rel="icon" type="image/png" sizes="32x32" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='45' fill='%23667eea'/%3E%3Ctext x='50' y='70' font-size='50' text-anchor='middle' fill='%23ffffff' font-family='Arial' font-weight='bold'%3E✉%3C/text%3E%3C/svg%3E">
     
     <!-- Font Awesome -->
@@ -19,6 +33,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
     <style>
+        /* ===== YOUR EXISTING CSS (SAME AS BEFORE) ===== */
         * {
             margin: 0;
             padding: 0;
@@ -46,6 +61,7 @@
             background: linear-gradient(135deg, #667eea, #764ba2);
             z-index: 1001;
             transition: width 0.1s;
+            box-shadow: 0 0 20px #667eea;
         }
 
         /* Live Clock */
@@ -69,6 +85,7 @@
 
         .live-clock i {
             color: #667eea;
+            font-size: 1rem;
         }
 
         .live-clock .time {
@@ -157,7 +174,7 @@
             right: 80px;
         }
 
-        /* Floating Social */
+        /* Floating Social Icons */
         .floating-social {
             position: fixed;
             left: 20px;
@@ -194,8 +211,8 @@
         /* Responsive */
         @media (max-width: 768px) {
             .floating-social { display: none; }
-            .view-counter { top: 70px; }
-            .live-clock { bottom: 80px; }
+            .view-counter { top: 70px; font-size: 0.8rem; }
+            .live-clock { bottom: 80px; font-size: 0.8rem; }
             .live-clock .date { display: none; }
             .quick-contact { bottom: 80px; }
             .contact-float-btn { width: 50px; height: 50px; }
@@ -316,6 +333,14 @@
             grid-column: span 2;
         }
 
+        .form-item label {
+            display: block;
+            font-size: 15px;
+            font-weight: 500;
+            color: #34495e;
+            margin-bottom: 8px;
+        }
+
         .form-item select {
             height: 50px;
             width: 100%;
@@ -406,7 +431,6 @@
             display: none;
         }
 
-        input[type="radio"]:checked + label .dot::after,
         input[type="radio"]:checked + .category label .dot::after {
             transform: translate(-50%, -50%) scale(1);
         }
@@ -504,19 +528,9 @@
         .success-message {
             text-align: center;
             padding: 20px;
-            background: #10b981;
-            color: white;
+            background: #f0f9ff;
             border-radius: 12px;
-            animation: slideDown 0.5s ease;
-            margin-top: 20px;
-        }
-
-        .error-message {
-            text-align: center;
-            padding: 20px;
-            background: #ef4444;
-            color: white;
-            border-radius: 12px;
+            color: #2c3e50;
             animation: slideDown 0.5s ease;
             margin-top: 20px;
         }
@@ -530,23 +544,22 @@
         .button.loading input {
             opacity: 0.7;
             cursor: wait;
+            position: relative;
         }
 
-        /* View Data Button */
-        .view-data-btn {
-            display: inline-block;
-            margin-top: 20px;
-            padding: 10px 20px;
-            background: #4a5568;
-            color: white;
-            text-decoration: none;
-            border-radius: 8px;
-            font-size: 14px;
-            transition: 0.3s;
+        .button.loading input::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            border: 2px solid white;
+            border-top-color: transparent;
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
         }
 
-        .view-data-btn:hover {
-            background: #2c3e50;
+        @keyframes spin {
+            to { transform: rotate(360deg); }
         }
 
         /* Responsive */
@@ -578,7 +591,7 @@
         <span>Views: <span class="counter-number" id="viewCount">1,234</span></span>
     </div>
 
-    <!-- Floating Social -->
+    <!-- Floating Social Icons -->
     <div class="floating-social">
         <a href="https://github.com/CodeGoManish" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
         <a href="https://www.linkedin.com/in/manish-gupta-a0a671208/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
@@ -604,8 +617,15 @@
         </div>
 
         <div class="content">
-            <!-- Contact Form - Local Storage Database -->
-            <form id="contactForm">
+            <!-- ===== CONTACT FORM WITH FORMSUBMIT ===== -->
+            <form id="contactForm" action="https://formsubmit.co/manish05453@gmail.com" method="POST">
+                <!-- FormSubmit Configuration -->
+                <input type="hidden" name="_subject" value="New Contact Form Submission - Manish Gupta Portfolio">
+                <input type="hidden" name="_template" value="table">
+                <input type="hidden" name="_captcha" value="false">
+                <input type="hidden" name="_next" value="https://codegomanish.github.io/thankyou.html">
+                <input type="hidden" name="_autoresponse" value="Thank you for contacting Manish Gupta! I'll get back to you soon.">
+                
                 <div class="user-details">
                     <!-- Full Name -->
                     <div class="input-box">
@@ -681,19 +701,14 @@
                         Gender
                     </span>
                     <div class="category">
-                        <input type="radio" name="gender" id="dot-1" value="Male">
                         <label for="dot-1">
                             <span class="dot one"></span>
                             <span class="gender">Male</span>
                         </label>
-                        
-                        <input type="radio" name="gender" id="dot-2" value="Female">
                         <label for="dot-2">
                             <span class="dot two"></span>
                             <span class="gender">Female</span>
                         </label>
-                        
-                        <input type="radio" name="gender" id="dot-3" value="Prefer not to say" checked>
                         <label for="dot-3">
                             <span class="dot three"></span>
                             <span class="gender">Prefer not to say</span>
@@ -701,10 +716,15 @@
                     </div>
                 </div>
 
+                <!-- Hidden Radio Inputs -->
+                <input type="radio" name="gender" id="dot-1" value="Male">
+                <input type="radio" name="gender" id="dot-2" value="Female">
+                <input type="radio" name="gender" id="dot-3" value="Prefer not to say" checked>
+
                 <!-- Buttons -->
                 <div class="button-group">
                     <div class="button">
-                        <input type="submit" value="Save to Database" id="submitBtn">
+                        <input type="submit" value="Send Message" id="submitBtn">
                     </div>
                     <div class="back-button">
                         <button type="button" onclick="goBack()">
@@ -712,13 +732,6 @@
                             Back
                         </button>
                     </div>
-                </div>
-
-                <!-- View Data Link -->
-                <div style="text-align: center; margin-top: 15px;">
-                    <a href="#" onclick="viewSavedData(); return false;" class="view-data-btn">
-                        <i class="fas fa-database"></i> View Saved Messages (3-4 clients)
-                    </a>
                 </div>
 
                 <!-- Footer Links -->
@@ -733,73 +746,13 @@
 
             <!-- Message Display Area -->
             <div id="formMessage" style="display: none;"></div>
-            
-            <!-- Saved Data Display (Hidden by default) -->
-            <div id="savedDataDisplay" style="display: none; margin-top: 30px;"></div>
         </div>
     </div>
 
-    <script>
-        // ===== DATABASE FUNCTIONS =====
-        
-        // Initialize database
-        let contactDatabase = [];
-        
-        // Load existing data from localStorage
-        function loadDatabase() {
-            const saved = localStorage.getItem('contactMessages');
-            if (saved) {
-                contactDatabase = JSON.parse(saved);
-            }
-            return contactDatabase;
-        }
-        
-        // Save data to localStorage
-        function saveToDatabase(formData) {
-            // Load existing data
-            contactDatabase = loadDatabase();
-            
-            // Add timestamp and ID to form data
-            formData.id = Date.now();
-            formData.timestamp = new Date().toLocaleString();
-            
-            // Add to database
-            contactDatabase.push(formData);
-            
-            // Keep only last 10 messages (optional)
-            if (contactDatabase.length > 10) {
-                contactDatabase = contactDatabase.slice(-10);
-            }
-            
-            // Save to localStorage
-            localStorage.setItem('contactMessages', JSON.stringify(contactDatabase));
-            
-            return formData;
-        }
-        
-        // Get all messages
-        function getAllMessages() {
-            return loadDatabase();
-        }
-        
-        // Delete a message
-        function deleteMessage(id) {
-            contactDatabase = loadDatabase();
-            contactDatabase = contactDatabase.filter(msg => msg.id !== id);
-            localStorage.setItem('contactMessages', JSON.stringify(contactDatabase));
-            return contactDatabase;
-        }
-        
-        // Clear all messages
-        function clearAllMessages() {
-            if (confirm('Are you sure you want to delete all saved messages?')) {
-                localStorage.removeItem('contactMessages');
-                contactDatabase = [];
-                alert('All messages deleted!');
-                viewSavedData(); // Refresh view
-            }
-        }
+    <!-- Thank You Page (create this file separately) -->
+    <!-- thankyou.html - Simple thank you page -->
 
+    <script>
         // Handle Service Change
         function handleServiceChange(select) {
             const otherContainer = document.getElementById('otherServiceContainer');
@@ -819,166 +772,30 @@
             window.history.back();
         }
 
-        // Form Submission
-        document.getElementById('contactForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            const submitBtn = document.getElementById('submitBtn');
-            const buttonDiv = document.querySelector('.button');
-            const messageDiv = document.getElementById('formMessage');
-            
-            // Get gender value
-            let gender = 'Prefer not to say';
-            if (document.getElementById('dot-1').checked) gender = 'Male';
-            if (document.getElementById('dot-2').checked) gender = 'Female';
-            
-            // Get service value
-            let service = document.getElementById('service').value;
-            if (service === 'Other') {
-                service = document.getElementById('otherService').value;
-            }
-            
-            // Validate email
-            const email = document.getElementById('email').value;
-            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            if (!emailRegex.test(email)) {
-                alert('Please enter a valid email address');
-                return;
-            }
-            
-            // Validate phone
-            const phone = document.getElementById('phone').value;
-            const phoneRegex = /^[\d\s\+\-]{10,}$/;
-            if (!phoneRegex.test(phone.replace(/\s/g, ''))) {
-                alert('Please enter a valid phone number');
-                return;
-            }
-            
-            // Create form data object
-            const formData = {
-                name: document.getElementById('fullName').value,
-                email: email,
-                phone: phone,
-                address: document.getElementById('address').value || 'Not provided',
-                service: service,
-                message: document.getElementById('message').value,
-                gender: gender
-            };
-            
-            // Add loading state
-            buttonDiv.classList.add('loading');
-            submitBtn.value = 'Saving...';
-            
-            // Simulate saving delay
-            setTimeout(() => {
-                // Save to database
-                const saved = saveToDatabase(formData);
-                
-                // Remove loading state
-                buttonDiv.classList.remove('loading');
-                submitBtn.value = 'Save to Database';
-                
-                // Show success message
-                messageDiv.style.display = 'block';
-                messageDiv.className = 'success-message';
-                messageDiv.innerHTML = `
-                    <i class="fas fa-check-circle" style="font-size: 24px; margin-bottom: 10px;"></i>
-                    <h4 style="margin-bottom: 5px;">Message Saved!</h4>
-                    <p>Your message has been saved to local database. ID: ${saved.id}</p>
-                `;
-                
-                // Reset form
-                document.getElementById('contactForm').reset();
-                document.getElementById('otherServiceContainer').style.display = 'none';
-                
-                // Auto hide after 5 seconds
-                setTimeout(() => {
-                    messageDiv.style.display = 'none';
-                }, 5000);
-                
-                console.log('Saved to database:', saved);
-            }, 1000);
+        // Radio button functionality
+        document.querySelectorAll('.category label').forEach((label, index) => {
+            label.addEventListener('click', function() {
+                document.getElementById(`dot-${index + 1}`).checked = true;
+            });
         });
 
-        // View Saved Data
-        function viewSavedData() {
-            const messages = getAllMessages();
-            const displayDiv = document.getElementById('savedDataDisplay');
-            const messageDiv = document.getElementById('formMessage');
+        // Form validation before submit
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+            const phoneRegex = /^[\d\s\+\-]{10,}$/;
             
-            // Hide any other messages
-            messageDiv.style.display = 'none';
-            
-            if (messages.length === 0) {
-                displayDiv.innerHTML = `
-                    <div class="error-message">
-                        <i class="fas fa-database"></i>
-                        <h4>No messages found</h4>
-                        <p>Be the first to send a message!</p>
-                    </div>
-                `;
-            } else {
-                let html = `
-                    <div style="background: #f8fafc; border-radius: 15px; padding: 20px; border: 1px solid #e0e7ff;">
-                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
-                            <h3 style="color: #2c3e50;">
-                                <i class="fas fa-database" style="color: #667eea;"></i> 
-                                Saved Messages (${messages.length})
-                            </h3>
-                            <button onclick="clearAllMessages()" style="padding: 8px 15px; background: #ef4444; color: white; border: none; border-radius: 8px; cursor: pointer;">
-                                <i class="fas fa-trash"></i> Clear All
-                            </button>
-                        </div>
-                `;
-                
-                messages.reverse().forEach((msg, index) => {
-                    html += `
-                        <div style="background: white; border-radius: 10px; padding: 15px; margin-bottom: 15px; border: 1px solid #e0e7ff; position: relative;">
-                            <div style="position: absolute; top: 10px; right: 10px;">
-                                <button onclick="deleteMessage(${msg.id}); viewSavedData();" style="background: #fee2e2; color: #ef4444; border: none; border-radius: 5px; padding: 5px 10px; cursor: pointer; font-size: 12px;">
-                                    <i class="fas fa-trash"></i>
-                                </button>
-                            </div>
-                            <div style="display: grid; grid-template-columns: 100px 1fr; gap: 10px; font-size: 14px;">
-                                <div style="color: #64748b;">Name:</div>
-                                <div style="color: #2c3e50; font-weight: 500;">${msg.name}</div>
-                                
-                                <div style="color: #64748b;">Email:</div>
-                                <div style="color: #2c3e50;">${msg.email}</div>
-                                
-                                <div style="color: #64748b;">Phone:</div>
-                                <div style="color: #2c3e50;">${msg.phone}</div>
-                                
-                                <div style="color: #64748b;">Service:</div>
-                                <div style="color: #2c3e50;">${msg.service}</div>
-                                
-                                <div style="color: #64748b;">Message:</div>
-                                <div style="color: #2c3e50;">${msg.message.substring(0, 50)}${msg.message.length > 50 ? '...' : ''}</div>
-                                
-                                <div style="color: #64748b;">Time:</div>
-                                <div style="color: #64748b; font-size: 12px;">${msg.timestamp}</div>
-                            </div>
-                        </div>
-                    `;
-                });
-                
-                html += `
-                        <div style="text-align: center; margin-top: 15px;">
-                            <button onclick="document.getElementById('savedDataDisplay').style.display = 'none'" style="padding: 8px 20px; background: #667eea; color: white; border: none; border-radius: 8px; cursor: pointer;">
-                                <i class="fas fa-times"></i> Close
-                            </button>
-                        </div>
-                    </div>
-                `;
-                
-                displayDiv.innerHTML = html;
+            if (!phoneRegex.test(phone.replace(/\s/g, ''))) {
+                e.preventDefault();
+                alert('Please enter a valid phone number with at least 10 digits');
+                return false;
             }
             
-            displayDiv.style.display = 'block';
-            
-            // Scroll to view
-            displayDiv.scrollIntoView({ behavior: 'smooth' });
-        }
+            // Show loading state
+            const submitBtn = document.getElementById('submitBtn');
+            submitBtn.value = 'Sending...';
+            submitBtn.style.opacity = '0.7';
+        });
 
         // ===== ADVANCED FEATURES =====
 
@@ -1004,4 +821,16 @@
             document.getElementById('date').textContent = dateStr;
         }
 
-       
+        setInterval(updateClock, 1000);
+        updateClock();
+
+        // View Counter
+        let views = localStorage.getItem('contactViews') || 4567;
+        views = parseInt(views) + 1;
+        localStorage.setItem('contactViews', views);
+        document.getElementById('viewCount').textContent = views.toLocaleString();
+
+        console.log('📬 Contact form ready - Messages will be sent to manish05453@gmail.com');
+    </script>
+</body>
+</html>
