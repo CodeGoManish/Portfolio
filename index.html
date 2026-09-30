@@ -1012,6 +1012,40 @@
                 height: 20px;
             }
         }
+
+        .splash-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 9999;
+    overflow: hidden;
+    background-color: #000;
+}
+
+#splash-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    transform: translate(-50%, -50%);
+    object-fit: cover;
+    z-index: 1;
+}
+
+#particle-canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    pointer-events: none;
+}
     </style>
 </head>
 <body>
@@ -1060,7 +1094,7 @@
     </div>
 
     <!-- PREMIUM SPLASH SCREEN -->
-    <div class="splash-screen" id="splashScreen">
+    <!--<div class="splash-screen" id="splashScreen">
         <div class="splash-bg">
             <div class="splash-circle"></div>
             <div class="splash-circle"></div>
@@ -1099,7 +1133,18 @@
                 <div class="splash-dot"></div>
             </div>
         </div>
-    </div>
+    </div>  -->
+    <!-- PREMIUM SPLASH SCREEN (VIDEO ONLY) -->
+<div class="splash-screen" id="splashScreen">
+    <!-- Video Background Container -->
+    <video autoplay muted loop playsinline id="splash-video">
+        <source src="your-video.mp4" type="video/mp4">
+        Your browser does not support HTML5 video.
+    </video>
+
+    <!-- Optional Particle Canvas Overlay -->
+    <canvas id="particle-canvas"></canvas>
+</div>
 
     <!-- MAIN CONTENT -->
     <div class="main-content" id="mainContent">
